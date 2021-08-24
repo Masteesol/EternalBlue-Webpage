@@ -1,0 +1,169 @@
+:root {
+    --main-white: #E5E5E5;
+    --main-grey: #52534F;
+}
+
+body {
+    color: var(--main-white);
+    font-family: sans-serif;
+    background-image: url("images/background2.png");
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px 50px 0px;
+    height: 100px;
+}
+
+header ul {
+    width: 200px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul li {
+    font-size: 25px;
+    display: inline;
+    text-decoration: none;
+    cursor: pointer;
+}
+header ul li:hover, .song:hover{
+    text-decoration: underline;
+}
+
+
+.logocontainer {
+    width: 6vw;
+    height: auto;
+    min-width: 50px;
+    min-height: auto;
+    position: absolute;
+    left: 0;
+    margin-left: 2vw;
+}
+
+.logocontainer img {
+    width: 100%;
+    height: 100%;;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 78vw;
+    margin: auto;
+}
+
+.albumcover {
+    width: 400px;
+    height: 400px;;
+}
+.spotify img{
+    width: 100px;
+    height: auto;
+}
+
+.releases {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.rightcolumn div a {
+    float: left;
+}
+
+.leftcolumn {
+    margin-right: 40px;
+}
+.leftcolumn h1 {
+    font-size: 45px;
+}
+
+.leftcolumn ol li {
+    font-size: 22px;
+}
+
+.column h3 {
+    font-size: 27px;
+}
+
+.about {
+    width: 50vw;
+}
+
+.view, .exitview {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--main-white);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.view:hover, .exitview:hover {
+    background-color: white;
+    opacity: 0.5;
+    color: grey;
+}
+
+.lyricscontainer {
+    height: 70vh;
+    width: 20vw;
+    min-width: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-color: var(--main-white);
+}
+.song {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+    .albumcover {
+        width: 75%;
+        height: auto;
+        margin: auto;
+
+    }
+    header {
+        height: 20px;
+    }
+    .leftcolumn h1 {
+        font-size: 25px;
+    }
+    .leftcolumn ol li {
+        font-size: 18px;
+    }
+    .view, .exitview {
+        font-size: 15px;
+    }
+    header ul li {
+        font-size: 20px;
+    }
+    header ul {
+        width: 170px;
+    }
+    .releases {
+        flex-direction: column;
+    }
+    main {
+        flex-direction: column;
+    }
+    .lyricscontainer {
+        margin-top: 20px!important;
+        height: 40vh;
+    }
+    .leftcolumn, .lyricscontainer, .rightcolumn {
+        margin: auto;
+    }
+    .about {
+        margin-top: 20px;
+        width: 100%;
+        height: 70vh!important;
+        overflow: scroll;
+    }
+
+}
