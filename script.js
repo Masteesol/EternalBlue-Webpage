@@ -48,7 +48,8 @@ exitView.addEventListener("click", function (e) {
 })
 
 main.addEventListener("click",function (e) {
-    let event = e.originalTarget.id;
+    console.log(e)
+    let event = e.target.id;
     let targetElm = "#lyrics"
     if (event.includes("song")) {
         targetElm = targetElm + event.substring("4")
