@@ -6,9 +6,9 @@ const viewBtn = document.querySelector(".view");
 const exitView = document.querySelector(".exitview");
 const nav = document.querySelector("nav");
 const lyricsContainer = document.querySelector(".lyricscontainer");
-const leftColumn = document.querySelector(".rightcolumn");
+const rightColumn = document.querySelector(".rightcolumn");
 const main = document.querySelector("main")
-const songListNav = document.querySelectorAll("ol li")
+const songListNav = document.querySelectorAll("ol li button")
 const headerLyrics = document.querySelector(".headerlyrics")
 
 
@@ -30,7 +30,7 @@ aboutBtn.addEventListener("click", function (e) {
 viewBtn.addEventListener("click", function (e) {
     nav.style.display = "none";
     lyricsContainer.style.display = "flex";
-    leftColumn.style.display = "none";
+    rightColumn.style.display = "none";
     viewBtn.style.display ="none";
     exitView.style.display = "inline"
     songListNav.forEach(item => item.classList.add("song"))
@@ -40,7 +40,7 @@ viewBtn.addEventListener("click", function (e) {
 exitView.addEventListener("click", function (e) {
     nav.style.display = "inline";
     lyricsContainer.style.display = "none";
-    leftColumn.style.display = "block";
+    rightColumn.style.display = "flex";
     viewBtn.style.display ="block";
     exitView.style.display = "none"
     headerLyrics.style.display = "none"

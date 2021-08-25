@@ -6,7 +6,9 @@
 body {
     color: var(--main-white);
     font-family: sans-serif;
-    background-image: url("images/background2.png");
+    background-image: url("images/Backgroundfull.png");
+    background-repeat: no-repeat;
+    
 }
 
 header {
@@ -70,9 +72,10 @@ main {
     flex-direction: row;
 }
 
-
-.rightcolumn div a {
-    float: left;
+.rightcolumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .leftcolumn {
@@ -82,8 +85,14 @@ main {
     font-size: 45px;
 }
 
-.leftcolumn ol li {
+.leftcolumn ol li button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+.leftcolumn ol li, .leftcolumn ol li button {
     font-size: 22px;
+    color: var(--main-white);
 }
 
 .column h3 {
@@ -126,7 +135,6 @@ main {
         width: 75%;
         height: auto;
         margin: auto;
-
     }
     header {
         height: 20px;
@@ -134,7 +142,7 @@ main {
     .leftcolumn h1 {
         font-size: 25px;
     }
-    .leftcolumn ol li {
+    .leftcolumn ol li button, .leftcolumn ol li {
         font-size: 18px;
     }
     .view, .exitview {
@@ -144,19 +152,16 @@ main {
         font-size: 20px;
     }
     header ul {
-        width: 170px;
+        width: 150px;
     }
-    .releases {
-        flex-direction: column;
-    }
-    main {
+    main, .releases {
         flex-direction: column;
     }
     .lyricscontainer {
         margin-top: 20px!important;
         height: 40vh;
     }
-    .leftcolumn, .lyricscontainer, .rightcolumn {
+    .leftcolumn, .lyricscontainer {
         margin: auto;
     }
     .about {
@@ -164,6 +169,10 @@ main {
         width: 100%;
         height: 70vh!important;
         overflow: scroll;
+    }
+    .rightcolumn a {
+        display: flex;
+        justify-content: center;
     }
 
 }
