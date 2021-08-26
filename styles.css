@@ -8,21 +8,28 @@ body {
     font-family: sans-serif;
     background-image: url("images/Backgroundfull.png");
     background-repeat: no-repeat;
-    
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     display: flex;
     justify-content: center;
-    margin: 50px 0px 50px 0px;
+    margin-bottom: 50px;
     height: 100px;
 }
 
 header ul {
+    margin-top: 50px;;
     width: 200px;
     padding: 0px;
     display: flex;
     justify-content: space-between;
+}
+
+.headerlyrics {
+    margin-top: 40px;;
 }
 
 header ul li {
@@ -35,7 +42,6 @@ header ul li:hover, .song-mod:hover{
     text-decoration: underline;
 }
 
-
 .logocontainer {
     width: 6vw;
     height: auto;
@@ -43,6 +49,7 @@ header ul li:hover, .song-mod:hover{
     min-height: auto;
     position: absolute;
     left: 0;
+    top: 2vw;
     margin-left: 2vw;
 }
 
@@ -188,7 +195,7 @@ main {
 
     .opennav {
         display: block!important;
-        background-image: url("images/bars-solid.svg");
+        background-image: url("images/list-ol-solid.svg");
         filter: invert(100%) sepia(4%) saturate(1356%) hue-rotate(296deg) brightness(116%) contrast(80%);
         background-color: transparent;
         background-repeat: no-repeat;
@@ -197,7 +204,7 @@ main {
         width: 25px;
         height: 25px;
         position: absolute;
-        top: 140px;
+        top: 100px;
         left: 20px;
         z-index: 2;
     }

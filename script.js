@@ -89,7 +89,7 @@ function openNavFunction () {
             toggled = 1;
         } else {
             openNavBtn.style.cssText =`
-                                        background-image: url(images/bars-solid.svg);
+                                        background-image: url(images/list-ol-solid.svg);
                                         left: 20px;
                                         `;  
             document.querySelector("#navbar").style.width = "0";
