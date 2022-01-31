@@ -100,9 +100,7 @@ async function test() {
     console.log("test");
     const url = "https://eternalblue.cmsma1mariussolheim.one/wp-content/uploads/2022/01/Powerless-lyrics.txt"
     const response = await fetch(url, {method:'GET', 
-                    headers: {'Access-Control-Allow-Origin': '*',
-                                'Access-Control-Allow-Headers': '*',
-                                'Access-Control-Allow-Methods': '*'}});
+                    headers: {'Access-Control-Allow-Origin': 'https://eternalblueband.netlify.app/releases.html'}});
     const JSON = await response.json;
     console.log(JSON);
 
