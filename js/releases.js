@@ -97,10 +97,10 @@ async function openLyrics(id, album) {
 test()
 
 async function test() {
-    console.log("test");
+    console.log("new test");
     const url = "https://eternalblue.cmsma1mariussolheim.one/wp-content/uploads/2022/01/Powerless-lyrics.txt"
     const response = await fetch(url, {method:'GET', 
-                    headers: {'Access-Control-Allow-Origin': 'https://eternalblueband.netlify.app/releases.html'}});
+                    headers: {'Access-Control-Allow-Origin': 'https://eternalblueband.netlify.app/'}});
     const JSON = await response.json;
     console.log(JSON);
 
