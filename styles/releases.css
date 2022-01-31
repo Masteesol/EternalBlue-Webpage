@@ -1,0 +1,52 @@
+header {
+    height: 10vh;
+}
+
+section {
+    flex-direction: column;
+}
+
+section div:first-of-type {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.album-content {
+    width: 100%;
+}
+
+.album-cover {
+    height: auto;
+    width: 100%;
+    
+}
+
+.album-cover img  {
+    width: 100%;
+}
+
+.song-listing li  {
+    display: list-item;
+    cursor: pointer;
+}
+
+.song-listing li:hover {
+    transform: scale(1.2, 1.2) translateX(1vw);
+}
+
+.song-listing {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.song-listing h2 {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.button-nav {
+    position: absolute;
+    bottom: 0px;
+}
