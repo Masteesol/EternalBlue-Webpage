@@ -18,6 +18,8 @@ body {
     100%{opacity: 1;}
 }
 
+
+
 /*Fonts and text color*/
 * {
     color: white;
@@ -37,6 +39,8 @@ p {
     background-image: linear-gradient(to bottom right, black 35%, var(--light-blue));
 }
 
+
+
 header {
     top: 0px;
     position: fixed;
@@ -49,6 +53,7 @@ header img {
     height: 15vh;
     width: auto;
     padding: 1rem;
+    z-index: 1;
 }
 
 /*Often repeated styling------------------------*/
@@ -73,10 +78,41 @@ ul >* {
 
 /*On hover ease in and out*/
 
-.spotify-footer-logo, ul >*, .move-btn, .image-container:hover, .song-listing li:hover {
+.spotify-footer-logo, ul >*, .move-btn, .image-container:hover, .song-listing li:hover, .exit-button:hover {
     transition: all .2s ease-in-out;
     transition-duration: 0.3s;
     
+}
+
+.exit-button, .burger-menu-active {
+    background-image: url("/icons/cross\ icon.svg")!important;
+}
+
+#burger-menu {
+    background-image: url("/icons/bars-solid.svg");
+    display: none;
+}
+
+
+.exit-button, #burger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 3vw;
+    min-width: 40px;
+    height: 3vw;
+    min-height: 40px;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(101%) contrast(103%);
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+
+.exit-button:hover {
+  transform: scale(1.1, 1.1);
 }
 
 /*Footer*/
@@ -92,6 +128,7 @@ ul >* {
     width: 80%;
     height: 80%;
 }
+
 
 .footer, .footer div {
     flex-direction: column;
@@ -135,22 +172,115 @@ ul {
     justify-content: space-evenly;
 }
 
-
-
 nav {
     height: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.nav-active, ul >*:hover {
+ul >*:hover {
     transform: scale(1.5, 1.5);
     /*text-decoration: underline;*/
+}
+
+/*Directional buttons: Go up and down nav, and left and right*/
+
+.move-btn{
+    height: 3vw;
+    min-height: 35px;
+    width: 3vw;
+    min-width: 35px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    filter: invert(98%) sepia(3%) saturate(1047%) hue-rotate(289deg) brightness(120%) contrast(100%);
+}
+
+.button-nav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 2vh;
+    height: 5vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+#go-left-btn {
+    transform: rotate(-90deg)
+}
+
+#go-right-btn {
+    transform: rotate(90deg)
+}
+
+#go-left-btn:hover {
+    transform: scale(1.2,1.2) rotate(-90deg);
+}
+
+#go-right-btn:hover {
+    transform: scale(1.2,1.2) rotate(90deg);
+}
+
+
+#go-left-btn, #go-up-btn, #go-right-btn {
+    background-image: url("/icons/arrow up.svg");
+}
+
+#go-down-btn {
+    background-image: url("/icons/arrow down.svg");
+}
+
+#go-up-btn:hover, #go-down-btn:hover {
+    transform: scale(1.2,1.2);
+}
+
+/*I'm using transform on a couple of elements I need to set z-index to -1 so the slide in 
+menu goes on top of transform elements and not below*/
+section, body, main {
+    position: relative;
+    z-index: -1;
 }
 
 
 @media only screen and (max-width: 700px) {
     p {
         font-size: 15px;
+    }
+    nav a, nav li {
+        display: block;
+        font-size: 30px!important;
+        margin-bottom: 10px;
+    }
+    nav {
+        position: absolute;
+        height: 100vh;
+        width: 0vw;
+        background-color: black;
+        overflow: hidden;
+        z-index: 10;
+        transition-property: width;
+        transition-duration: 0.6s;
+        transition-timing-function: linear;
+    }
+
+    .nav-active {
+        width: 100vw;
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #burger-menu {
+        display: inherit;
+    }
+    ul >*:hover {
+        transform: none;
+        text-decoration: underline;
     }
 }

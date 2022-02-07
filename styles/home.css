@@ -19,6 +19,7 @@ h2 {
 }
 
 
+
 section {
     width: 100%;
     scroll-snap-align: start;
@@ -52,7 +53,6 @@ section {
     animation-duration: 2s, 2s;
     animation-delay: 0s, 4s;
     animation-name: up-below, fade-out;
-
 }
 
 @keyframes up-below{
@@ -102,7 +102,6 @@ section {
     scroll-snap-points-x: repeat(80vw);
     scrollbar-width: none; 
     -ms-overflow-style: none;
-    
 }
 
 .image-reel::-webkit-scrollbar {
@@ -154,59 +153,6 @@ section {
     
 }
 
-
-/*styling buttons*/
-/*Same styling for left and right*/
-.move-btn{
-    height: 3vw;
-    min-height: 30px;
-    width: 3vw;
-    min-width: 30px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    filter: invert(98%) sepia(3%) saturate(1047%) hue-rotate(289deg) brightness(120%) contrast(100%);
-}
-
-/*using the same icon file for left and right, just rotating them*/
-#go-left-btn {
-    transform: rotate(-90deg)
-}
-
-#go-right-btn {
-    transform: rotate(90deg)
-}
-
-#go-left-btn:hover {
-    transform: scale(1.2,1.2) rotate(-90deg);
-}
-
-#go-right-btn:hover {
-    transform: scale(1.2,1.2) rotate(90deg);
-}
-
-#go-left-btn, #go-up-btn, #go-right-btn {
-    background-image: url("/icons/arrow up.svg");
-}
-
-#go-down-btn {
-    background-image: url("/icons/arrow down.svg");
-}
-
-#go-up-btn:hover, #go-down-btn:hover {
-    transform: scale(1.2,1.2);
-}
-
-
-.front-page span {
-    position: absolute;
-    bottom: 10px;
-    display: flex;
-    justify-content: center;
-    width: 20vw;
-}
 
 @media only screen and (max-width: 700px) {
     .front-page {

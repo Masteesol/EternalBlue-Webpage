@@ -1,6 +1,7 @@
 const welcomeCont = document.querySelector('.front-page div');
 const frontPage = document.querySelector('.front-page');
 const main = document.querySelector('main');
+const body = document.querySelector("body");
 const imageReel = document.querySelector('.image-reel');
 const postsContainer = document.querySelector('#latest-posts-container');
 
@@ -24,7 +25,7 @@ function welcomeText() {
     
 }
 
-frontPage.addEventListener("click", function(e) {
+body.addEventListener("click", function(e) {
     const id = e.target.id;
     console.log(id);
     if(id === "go-down-btn") {

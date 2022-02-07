@@ -1,5 +1,5 @@
-const postContainer = document.querySelector('.post-content');
 const firstAlbum = document.querySelector('#album-vanagloria');
+const main = document.querySelector('main');
 let songList = {};
 
 insertData()
@@ -87,21 +87,22 @@ function createAlbumHTML(release, imageSource) {
 
 async function openLyrics(id, album) {
     const textUrl = songList[album].filter(item => item.id === id)[0].link;
-    console.log(textUrl);
-    location.replace(textUrl)
-    /*
-    const JSON = getApi(textUrl);
-    console.log(await JSON);*/
+    const text = document.createElement("div");
+    text.classList.add("lyrics-container")
+    const iFrame = document.createElement("iFrame");
+    iFrame.setAttribute("type", "text/html");
+    iFrame.setAttribute("src", textUrl);
+    iFrame.setAttribute("id", "iframe-lyrics");
+    const exitButton = document.createElement("button");
+    exitButton.classList.add("exit-button")
+    exitButton.addEventListener("click", function() {
+        document.querySelector(".lyrics-container").remove()
+        document.querySelector(".exit-button").remove()
+    })
+    main.append(exitButton)
+    console.log(iFrame);
+    text.append(iFrame);
+    firstAlbum.append(text)
 }
 
-test()
 
-async function test() {
-    console.log("new test");
-    const url = "https://eternalblue.cmsma1mariussolheim.one/wp-content/uploads/2022/01/Powerless-lyrics.txt"
-    const response = await fetch(url, {method:'GET', 
-                    headers: {'Access-Control-Allow-Origin': 'https://eternalblueband.netlify.app/'}});
-    const JSON = await response.json;
-    console.log(JSON);
-
-}

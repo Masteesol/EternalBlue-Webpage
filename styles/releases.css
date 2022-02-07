@@ -38,7 +38,6 @@ section div:first-of-type {
 .song-listing {
     display: flex;
     flex-direction: column;
-
 }
 
 .song-listing h2 {
@@ -49,4 +48,29 @@ section div:first-of-type {
 .button-nav {
     position: absolute;
     bottom: 0px;
+}
+
+.lyrics-container {
+    height: 100%;
+    width: 50vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lyrics-container iframe{
+    width: 100%;
+    background-color: white;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    section div:first-of-type {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    
 }
