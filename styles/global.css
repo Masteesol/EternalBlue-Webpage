@@ -257,6 +257,7 @@ section, body, main {
         font-size: 30px!important;
         margin-bottom: 10px;
     }
+    /*need to make a slide-in kind of menu for mobile viewports*/
     nav {
         position: absolute;
         height: 100vh;
@@ -277,6 +278,9 @@ section, body, main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom: 10vh;
+        /*andriod devices has this annoying nav menu at the bottom, 
+        so I need to offset my nav by 10vh to make it look centered*/
     }
     
     #burger-menu {

@@ -157,14 +157,14 @@ section {
 @media only screen and (max-width: 800px) {
     .container h2 {
         margin-top: 10vh;
+        margin-left: 10vw;
     }
     h2 {
         font-size: 25px;
     }
 
     h3 {
-        font-size: 12px!important;
-        font-weight: 500;
+        font-size: 2.5vw!important;
 
     }
     .front-page {
