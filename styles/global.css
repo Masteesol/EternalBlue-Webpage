@@ -1,3 +1,5 @@
+/*Here I have all the styles which pertain to all pages, like navigation and general styling*/
+
 :root {
     --light-blue: #5BF4FF;
 }
@@ -45,12 +47,13 @@ header {
     top: 0px;
     position: fixed;
     height: 10vh;
-
 }
 
 header img {
     position: fixed;
-    height: 15vh;
+    height: 10vw;
+    min-height: 7vh;
+    max-height: 15vh;
     width: auto;
     padding: 1rem;
     z-index: 1;
