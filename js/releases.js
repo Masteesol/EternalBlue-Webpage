@@ -95,14 +95,15 @@ async function openLyrics(id, album) {
     iFrame.setAttribute("id", "iframe-lyrics");
     const exitButton = document.createElement("button");
     exitButton.classList.add("exit-button")
+    exitButton.setAttribute("id", "exit-lyrics")
     exitButton.addEventListener("click", function() {
         document.querySelector(".lyrics-container").remove()
-        document.querySelector(".exit-button").remove()
     })
-    main.append(exitButton)
     console.log(iFrame);
-    text.append(iFrame);
-    firstAlbum.append(text)
+    text.append(iFrame, exitButton);
+    firstAlbum.append(text);
+    const testIframe = document.querySelector('#iframe-lyrics');
+    console.log(testIframe.contentWindow.document);
 }
 
 

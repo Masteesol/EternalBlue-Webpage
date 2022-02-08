@@ -13,7 +13,9 @@ section div:first-of-type {
 }
 
 .album-content {
+    position: relative;
     width: 100%;
+    z-index: -1;
 }
 
 .album-cover {
@@ -51,21 +53,31 @@ section div:first-of-type {
 }
 
 .lyrics-container {
-    height: 100%;
-    width: 50vw;
+    height: 50%;
+    width: 70vw;
     position: absolute;
     display: flex;
     justify-content: center;
     overflow: hidden;
+    z-index: 12;
 }
 
 .lyrics-container iframe{
     width: 100%;
     background-color: white;
-    
 }
 
-@media only screen and (max-width: 600px) {
+
+#exit-lyrics {
+    filter: none;
+    min-width: 15px;
+    min-height: 15px;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+
+@media only screen and (max-width: 800px) {
     section div:first-of-type {
         display: flex;
         flex-direction: column;
