@@ -74,6 +74,8 @@ figure {
     align-items: center;
 }
 
+.wp-image
+
 figure img{
     width: 100%;
     height: auto;
@@ -113,6 +115,6 @@ audio {
     }
 
     figure img{
-        width: 100vw;
+        width: 125vw;
     }
 }
