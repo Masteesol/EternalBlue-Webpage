@@ -75,16 +75,25 @@ figure img{
     height: auto;
 }
 
-picture {
+picture, .audio-container {
     margin: 3vh 0vh 3vh 0vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.audio-container{
+    margin: 10vh 0vh 10vh 0vh;
+}
+
 figcaption {
+    margin-top: 3vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(224, 224, 224);
+}
+
+audio {
+    width: 100%;
 }
 
 @media only screen and (max-width: 800px) {

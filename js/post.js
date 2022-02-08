@@ -32,11 +32,11 @@ async function insertData() {
                 let counter = 1;
                 getCleanHTML(post.content.rendered).forEach(function(p) {
                         article.append(p);
-                        if(counter === 1) {
+                        /*if(counter === 1) {
                                 description.innerHTML = `Excerpt: ${p.innerHTML}Read more...`;
                         }
                         article.innerHTML += `<br>`;
-                        counter++;
+                        counter++;*/
                 })
                 loader.remove()
         } catch(err) {
@@ -73,9 +73,25 @@ function getCleanHTML(content) {
                                 caption.innerHTML = `${node.textContent}`;
                                 div.append(newHTML, caption)
                                 nodeList.push(div)
-                        }    
+                        }
+                        if(node.className.includes("wp-block-audio")){
+                                const div = document.createElement("div");
+                                div.classList.add("audio-container")
+                                const audio = `<audio
+                                                        controls
+                                                        src="${node.firstChild.src}">
+                                                        Your browser does not support the
+                                                        audio element.
+                                                </audio>`;
+                                const caption = document.createElement("figcaption");
+                                caption.innerHTML = `Audio: ${node.textContent}`;
+                                div.innerHTML= audio;
+                                div.append(caption)
+                                nodeList.push(div)
+                        }
                 }
         });
+        console.log("nodelist", nodeList);
         return nodeList;
 }
 
