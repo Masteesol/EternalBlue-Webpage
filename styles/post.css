@@ -74,15 +74,12 @@ figure {
     align-items: center;
 }
 
-.wp-image
-
-figure img{
-    width: 100%;
+.wp-image img{
     height: auto;
 }
 
 picture, .audio-container {
-    margin: 3vh 0vh 3vh 0vh;
+    margin: 10vh 0vh 7vh 0vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,19 +99,18 @@ audio {
     width: 100%;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     h1 {
         font-size: 5vw;
     }
     .content > div {
-        width: 90%;
+        width: 98%;
     }
     .featured-image-container img {
         width: auto;
         height: 100%;
     }
-
     figure img{
-        width: 125vw;
+        width: 150vw;
     }
 }
