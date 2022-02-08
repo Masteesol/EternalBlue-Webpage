@@ -68,6 +68,10 @@ figure {
     height: 50vh;
     overflow: hidden;
     cursor:zoom-in;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 figure img{
@@ -106,5 +110,9 @@ audio {
     .featured-image-container img {
         width: auto;
         height: 100%;
+    }
+
+    figure img{
+        width: 100vw;
     }
 }
