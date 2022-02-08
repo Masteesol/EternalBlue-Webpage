@@ -9,4 +9,3 @@ function stringToHTMLNodes(string) {
     html.innerHTML = `${string}`;
     return html.childNodes;
 }
-

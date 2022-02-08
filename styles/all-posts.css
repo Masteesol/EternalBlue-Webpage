@@ -9,19 +9,18 @@ main {
     transform: scale(1.7,1.7);
 }
 
-.post-content, .new-post {
+.post-content {
     display: flex;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
+
 
 .new-post {
     flex-direction: column;
 }
 
-.post-content {
-    width: 100%;
-    justify-content: center;
-}
 
 h1 {
     margin-bottom: 10vh;

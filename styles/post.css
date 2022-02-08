@@ -63,6 +63,30 @@ article {
     padding: 10px
 }
 
+figure {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    cursor:zoom-in;
+}
+
+figure img{
+    width: 100%;
+    height: auto;
+}
+
+picture {
+    margin: 3vh 0vh 3vh 0vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figcaption {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(224, 224, 224);
+}
+
 @media only screen and (max-width: 800px) {
     h1 {
         font-size: 5vw;

@@ -30,7 +30,7 @@ async function insertData() {
                                                  <p>Published: ${reformatDate(post.modified)}</p>`;
                 //Adding paragraphs from WP and setting description of webpage as an excerpt of the article
                 let counter = 1;
-                getParagraphs(post.content.rendered).forEach(function(p) {
+                getCleanHTML(post.content.rendered).forEach(function(p) {
                         article.append(p);
                         if(counter === 1) {
                                 description.innerHTML = `Excerpt: ${p.innerHTML}Read more...`;
@@ -53,13 +53,27 @@ function createFeaturedImage(source) {
         return htmlImage;
 }
 
-function getParagraphs(content) {
+
+function getCleanHTML(content) {
         const htmlNodes = stringToHTMLNodes(content);
+        console.log(htmlNodes);
         let nodeList = [];
         htmlNodes.childNodes.forEach(function(node) {
                 console.log(node);
                 if(node.nodeName === "P") {
                         nodeList.push(node);
+                }
+                if(node.nodeName === "FIGURE") {
+                        if(node.className.includes("wp-block-image")){
+                                const div = document.createElement("picture");
+                                const newHTML = document.createElement("figure");
+                                const caption = document.createElement("figcaption");
+                                newHTML.innerHTML = `<img src="${node.firstChild.src}" alt="${node.firstChild.alt}">`;
+                                newHTML.classList.add("wp-image");
+                                caption.innerHTML = `${node.textContent}`;
+                                div.append(newHTML, caption)
+                                nodeList.push(div)
+                        }    
                 }
         });
         return nodeList;

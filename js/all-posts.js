@@ -17,7 +17,10 @@ async function insertData() {
             const media = JSONObj.media;
             const categories = JSONObj.categories;
             console.log(JSONObj);
+            const sortedPosts = sortPostsByDate(post)
+            console.log("sorted",sortedPosts);
             post.forEach(function(post) {
+                console.log("current post", post);
                 if(post.categories[0] === sortTypeOfPost(categories, "post")) {
                     const mediaSource = media.filter(item => item.id === post.featured_media)[0].source_url;
                     const authorName = author.filter(item => item.id === post.author)[0].name;
@@ -56,5 +59,8 @@ function reformatDate(date) {
     const onlyDate = date.substring(0,10)
     const newDate = onlyDate.split("-");
     return newDate[2] +'.' + newDate[1]+ '.' + newDate[0]
+}
 
+function sortPostsByDate (post) {
+    return post.sort(post.date)
 }
