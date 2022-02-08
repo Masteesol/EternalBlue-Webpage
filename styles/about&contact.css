@@ -1,0 +1,69 @@
+@import url(global.css);
+
+#nav-about {
+    transform: scale(1.7,1.7);
+}
+
+main {
+    min-height: 100vh;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+body {
+    background-image: linear-gradient(to bottom right, black 35%, red);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+label, input, textarea {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    color: rgb(43, 43, 43);
+    outline: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: 0px;
+    width: 100%;
+}
+
+button {
+    padding: 7px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(226, 0, 0);
+    border: 0px;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+    background-color: rgb(218, 89, 89);
+}
+
+textarea {
+    resize: none;
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        width: 95%;
+    }
+}
+

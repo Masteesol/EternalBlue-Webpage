@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#070707">
+        <link rel="shortcut icon" type="image/x-icon" href="logo/logo big.png" />
+        <link rel="stylesheet" href="styles/global.css">
+        <link rel="stylesheet" href="styles/about&contact.css">
+        <title>Contact us</title>
+    </head>
+    <body >
+        <header></header>
+        <main class="about-background">
+            <h1>Contact Us</h1>
+            <form action="wp-json/contact-form-7/v1/contact-forms/73/feedback" method="POST">
+                <label for="name">Your name</label><input type="text" id="name" placeholder="...">
+                <label for="subject">Subject</label><input type="text" id="subject" placeholder="...">
+                <label for="message">Message</label><textarea name="message" id="message" cols="30" rows="10" placeholder="..."></textarea>
+                <button id="submit">SEND</button>
+            </form>
+        </main>
+    </body>
+    <footer class="footer">
+        <div>
+            <h3>Listen on Spotify</h3>
+            <a class="spotify-footer-logo" href="https://open.spotify.com/artist/3X95Bzg0XrTT7N7KB7MXhY?si=D7ZdIds4TCmOBjCnkr6SUA"><img src="/logo/spotify logo.png" alt="to spotify icon"></a>
+        </div>
+            <p>Eternal Blue 2022&copy All rights reserved</p>
+            <p>Webpage developed by Marius Solheim.</p>
+    </footer>
+    <script src="js/components/api-call.js"></script>
+    <script src="js/components/session-storage.js"></script>
+    <script src="js/components/nav.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/contact.js"></script>
+</html>

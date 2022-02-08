@@ -11,7 +11,7 @@ function createNav () {
                         <a href="all-posts.html" id="nav-all-posts"><li>Posts</li></a>
                         <a href="releases.html" id="nav-releases"><li>Releases</li></a>
                         <a href="about.html" id="nav-about"><li>About</li></a>
-                        <li id="open-contact-form">Contact</li>
+                        <a href="contact.html" id="nav-contact"><li>Contact</li></a>
                     </ul>
                     `;
 
