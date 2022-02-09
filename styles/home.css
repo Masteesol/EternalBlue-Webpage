@@ -220,6 +220,10 @@ section {
     h2 {
         font-size: 25px;
     }
+    /*due to android phones having this annoying meny at the bottom I need to offset the top post by 10vh to compensate*/
+    .featured-post {
+        margin-top: 10vh;
+    }
     .featured-post h2 {
         font-size: 23px;
     }
