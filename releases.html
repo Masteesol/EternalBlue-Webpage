@@ -16,16 +16,16 @@
         <header></header>
         <main>
             <div class="loader"></div>
-            <div class="album-content">
+            <section class="common-background">
+                <h1>Eternal Blue Music</h1>
+                <div class="open-media-player">
+                    <button id="open-media-player">Open Media Player</button>
+                    <div class="sound-icon"></div>
+                </div>
+            </section>
+            <section class="common-background" id="albums">
                 
-                <section class="common-background" id="album-vanagloria">
-                    <h1>Releases</h1>
-                    <span class="button-nav">
-                        <button id="go-down-btn" class="move-btn"></button>
-                        <button id="go-up-btn" class="move-btn"></button>
-                    </span> 
-                </section>
-            </div>
+            </section>
             <section class="footer">
                 <div>
                     <h3>Listen on Spotify</h3>
@@ -35,6 +35,10 @@
                     <p>Webpage developed by Marius Solheim.</p>
             </section>
         </main>
+        <span class="button-nav">
+            <button id="go-down-btn" class="move-btn"></button>
+            <button id="go-up-btn" class="move-btn"></button>
+        </span> 
     </body>
     
     <script src="js/components/api-call.js"></script>

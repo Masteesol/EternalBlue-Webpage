@@ -1,7 +1,6 @@
 const welcomeCont = document.querySelector('.front-page div');
 const frontPage = document.querySelector('.front-page');
 const main = document.querySelector('main');
-const body = document.querySelector("body");
 const imageReel = document.querySelector('.image-reel');
 const postsContainer = document.querySelector('#latest-posts-container');
 
@@ -24,38 +23,8 @@ function welcomeText() {
     }
     
 }
-
-body.addEventListener("click", function(e) {
-    const id = e.target.id;
-    switch(id) {
-        case("go-down-btn"):
-            scrollYByVh(main.clientHeight);
-            break;
-        case("go-up-btn"):
-            scrollYByVh(-main.clientHeight);
-            break;
-        case("go-right-btn"):
-            scrollXByClientWidth(imageReel.clientWidth);
-            break;
-        case("go-left-btn"):
-            scrollXByClientWidth(-imageReel.clientWidth);
-            break;
-    }
-})
-
-
-function scrollYByVh(upOrDown) {
-    main.scrollBy({top: upOrDown,
-                    left: 0,
-                    behavior: 'smooth'});
-  }
-
-function scrollXByClientWidth(leftOrRight) {
-    imageReel.scrollBy({top: 0,
-                    left: leftOrRight,
-                    behavior: 'smooth'});
-  }
-
+//Defining which element should be set for scroll width in nav.js
+setScrollElement(imageReel);
 
 insertImages()
 
@@ -83,16 +52,23 @@ async function insertImages (){
         //finding id of featured post tag
         const featuredTagID = tags.filter(tags => tags.name === "featured post");
         //Check for featured post and returning first result as there should be only one featured post
-        return posts.filter(function(post){
+        const featuredPost = posts.filter(function(post){
             let hasFeaturedTag = [];
             //Check if post.tags array contain a featured tag
             for(let i = 0; i <= post.tags.length; i++) {
                 if(post.tags[i] === featuredTagID[0].id){
                     hasFeaturedTag.push(post);
                     return hasFeaturedTag;
-                }
+                } 
             }
         })[0];
+        //if I have forgotten to put a featured post tag in WP, the last post will be set as featured
+        if(!featuredPost) {
+            return posts[0];
+        } else {
+            return featuredPost;
+        }
+        
     }
 
     createHTMLFeaturedPost(findFeaturedPost())

@@ -3,24 +3,44 @@ header {
 }
 
 section {
-    flex-direction: column;
-}
-
-section div:first-of-type {
     display: flex;
-    flex-direction: row;
-    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.album-content {
-    position: relative;
-    width: 100%;
-    z-index: -1;
+.open-media-player {
+    display: flex;
+    cursor: pointer;
+}
+
+.open-media-player button {
+    background-color: transparent;
+    font-size: 30px;
+    border: 0px;
+    margin-right: 5vw;
+    cursor: pointer;
+}
+
+.sound-icon {
+    background-image: url("/icons/Icon\ open-audio-spectrum.svg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    background-repeat: none;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(101%) contrast(103%);
+
+}
+
+.album-info-container {
+    display: flex;
+    justify-content: center;
 }
 
 .album-cover {
     height: auto;
-    width: 100%;
+    width: 50%;
+    max-width: 500px;
     
 }
 
@@ -47,10 +67,7 @@ section div:first-of-type {
     margin-top: 0px;
 }
 
-.button-nav {
-    position: absolute;
-    bottom: 0px;
-}
+
 
 .lyrics-container {
     height: 50%;
@@ -78,7 +95,7 @@ section div:first-of-type {
 
 
 @media only screen and (max-width: 800px) {
-    section div:first-of-type {
+    .album-info-container {
         display: flex;
         flex-direction: column;
         align-items: center;

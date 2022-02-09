@@ -1,6 +1,14 @@
 const firstAlbum = document.querySelector('#album-vanagloria');
 const main = document.querySelector('main');
+const albumContainer = document.querySelector('#albums');
+
+/*const body = document.querySelector("body");*/
+
 let songList = {};
+
+//Defining which element should be set for scroll width in nav.js
+//I set main here as width for horizontal scroll for entire width of main in album releases. Will be cool, I think.
+setScrollElement(main);
 
 insertData()
 
@@ -23,7 +31,7 @@ async function insertData() {
                 if(post.categories[0] === sortTypeOfPost(categories, "release")) {
                     console.log(post);
                     const mediaSource = media.filter(item => item.id === post.featured_media)[0].source_url;
-                    firstAlbum.append(createAlbumHTML(post, mediaSource))
+                    albumContainer.append(createAlbumHTML(post, mediaSource))
                 }
             })
 
@@ -40,6 +48,8 @@ async function insertData() {
 
 function createAlbumHTML(release, imageSource) {
     const container = document.createElement("div");
+    container.classList.add("album-info-container");
+    container.setAttribute("id", "album-" + release.title.rendered)
     container.innerHTML += `<div class="album-cover">
                                 <img src=${imageSource} alt="album cover image">
                             </div>`;
@@ -101,7 +111,7 @@ async function openLyrics(id, album) {
     })
     console.log(iFrame);
     text.append(iFrame, exitButton);
-    firstAlbum.append(text);
+    albumContainer.append(text);
     const testIframe = document.querySelector('#iframe-lyrics');
     console.log(testIframe.contentWindow.document);
 }
