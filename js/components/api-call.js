@@ -2,6 +2,7 @@ const urlPosts = "https://eternalblue.cmsma1mariussolheim.one/wp-json/wp/v2/post
 const urlMedia = "https://eternalblue.cmsma1mariussolheim.one/wp-json/wp/v2/media/";
 const urlUsers = "https://eternalblue.cmsma1mariussolheim.one/wp-json/wp/v2/users/";
 const urlCategories = "https://eternalblue.cmsma1mariussolheim.one/wp-json/wp/v2/categories/";
+const urlTags = "https://eternalblue.cmsma1mariussolheim.one/wp-json/wp/v2/tags/";
 
 async function getApi(url) {
     try {

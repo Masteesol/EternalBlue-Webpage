@@ -27,25 +27,22 @@ function welcomeText() {
 
 body.addEventListener("click", function(e) {
     const id = e.target.id;
-    console.log(id);
-    if(id === "go-down-btn") {
-        console.log("object");
-        scrollYByVh(main.clientHeight)
+    switch(id) {
+        case("go-down-btn"):
+            scrollYByVh(main.clientHeight);
+            break;
+        case("go-up-btn"):
+            scrollYByVh(-main.clientHeight);
+            break;
+        case("go-right-btn"):
+            scrollXByClientWidth(imageReel.clientWidth);
+            break;
+        case("go-left-btn"):
+            scrollXByClientWidth(-imageReel.clientWidth);
+            break;
     }
-    if(id === "go-up-btn") {
-        scrollYByVh(-main.clientHeight)
-    }      
 })
 
-postsContainer.addEventListener("click", function(e) {
-    const id = e.target.id;
-    if(id === "go-right-btn") {
-        scrollXByClientWidth(imageReel.clientWidth)
-    }
-    if(id === "go-left-btn") {
-        scrollXByClientWidth(-imageReel.clientWidth)
-    }      
-})
 
 function scrollYByVh(upOrDown) {
     main.scrollBy({top: upOrDown,
@@ -58,8 +55,6 @@ function scrollXByClientWidth(leftOrRight) {
                     left: leftOrRight,
                     behavior: 'smooth'});
   }
-//setting session storage with API- call object if it's not already there
-
 
 
 insertImages()
@@ -74,6 +69,7 @@ async function insertImages (){
         JSONObj = getSessionStorage("api-call");
     }
     
+    const tags = JSONObj.tags;
     const posts = JSONObj.posts;
     const media = JSONObj.media;
     const categories = JSONObj.categories;
@@ -81,7 +77,37 @@ async function insertImages (){
     console.log("categories: ", categories);
     console.log("posts: ", posts);
     console.log("images: ", media);
+    console.log("tags: ", tags);
 
+    function findFeaturedPost() {
+        //finding id of featured post tag
+        const featuredTagID = tags.filter(tags => tags.name === "featured post");
+        //Check for featured post and returning first result as there should be only one featured post
+        return posts.filter(function(post){
+            let hasFeaturedTag = [];
+            //Check if post.tags array contain a featured tag
+            for(let i = 0; i <= post.tags.length; i++) {
+                if(post.tags[i] === featuredTagID[0].id){
+                    hasFeaturedTag.push(post);
+                    return hasFeaturedTag;
+                }
+            }
+        })[0];
+    }
+
+    createHTMLFeaturedPost(findFeaturedPost())
+
+    function createHTMLFeaturedPost(post) {
+        const parent = document.querySelector('.container');
+        const container = document.createElement("div");
+        container.classList.add("featured-post");
+        const imageSource = media.filter(item => item.id === post.featured_media)[0].source_url;
+        container.innerHTML = `<a href="post.html?id=${post.id}"><img src="${imageSource}">
+                                <span><div></div><h3>Featured Post</h3></span>
+                                <h2>${post.title.rendered}</h2></a>`;
+        parent.insertBefore(container, parent.firstChild);
+    }
+    
     let counter = 0;
     let totalCount = 0;
     let newImageGroup;
@@ -90,7 +116,6 @@ async function insertImages (){
     //- inserting groups of 4 cards into a <picture> container
     //- if post.length % 4 != 0, the code should insert whatever is left into a <picture> container
     //- Also if the post category is not "post" it should not be inserted. And the length of the posts array should be decremented
-
     let postsLength = posts.length;
     
     posts.forEach(function(post) {
@@ -118,7 +143,6 @@ async function insertImages (){
         } else {
             postsLength--;
         }
-
 
         function createImageGroup() {
             newImageGroup = document.createElement("picture");

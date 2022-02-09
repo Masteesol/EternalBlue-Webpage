@@ -9,3 +9,10 @@ function stringToHTMLNodes(string) {
     html.innerHTML = `${string}`;
     return html.childNodes;
 }
+
+function createFeaturedImage(source) {
+    const htmlImage = document.createElement("img");
+    htmlImage.setAttribute("src", source);
+    htmlImage.classList.add("featured-image");
+    return htmlImage;
+}

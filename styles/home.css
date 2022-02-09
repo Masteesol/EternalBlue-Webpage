@@ -15,7 +15,7 @@ main {
 }
 
 h2 {
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 
@@ -84,12 +84,74 @@ section {
     display: flex;
     align-items: center;
 }
+/*Featured Post styling*/
+
+.featured-post {
+    width: 100%;
+    min-height: 30vh;
+    max-height: 50vh;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+@keyframes up-and-down{
+    0%{bottom: 0vh;}
+    50%{bottom: 10vh;}
+    100%{bottom: 0vh;}
+}
+
+.featured-post img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    animation-name: up-and-down;
+    animation-duration: 9s;
+   animation-iteration-count: infinite;
+}
+
+.featured-post h2 {
+    margin: 0px;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    font-size: 2.5vw;
+    width: 100%;
+    background-color: rgb(51, 51, 51, 0.5);
+}
+
+.featured-post span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: rgb(51, 51, 51, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.featured-post span h3 {
+    margin-right: 10px;
+}
+
+.featured-post span div {
+   background-image: url("/icons/Icon\ ionic-ios-star.svg");
+   background-size: 100%;
+   background-repeat: no-repeat;
+   background-color: transparent;
+   filter: invert(71%) sepia(50%) saturate(2007%) hue-rotate(1deg) brightness(108%) contrast(103%);
+   height: 2vw;
+   width: 2vw;
+   min-width: 25px;
+   min-height: 25px;
+   margin: 0px 10px 0px 10px;
+}
+
 
 /*image reel styling____________________________________________*/
 
 .image-reel {
     width: 100%;
-    height: 20vw;
+    height: 15vw;
     min-height: 100px;
     padding: 0px 10px 0px 10px;
     overflow-x: scroll;
@@ -121,7 +183,7 @@ section {
     display: flex;
     justify-content: center;
     height: 85%;
-    width: 17.5vw;
+    width: 17vw;
     overflow: hidden;
     box-shadow: 1px 1px 5px 1px #333333;
     cursor: pointer; 
@@ -155,18 +217,20 @@ section {
 
 
 @media only screen and (max-width: 800px) {
-    .container h2 {
-        margin-top: 10vh;
-        margin-left: 10vw;
-    }
     h2 {
         font-size: 25px;
+    }
+    .featured-post h2 {
+        font-size: 23px;
+    }
+    .featured-post img {
+        animation: none;
     }
 
     h3 {
         font-size: 2.5vw!important;
-
     }
+
     .front-page {
         background-size: 350%;
     }

@@ -11,7 +11,8 @@ async function newObject() {
      posts : await getApi(urlPosts +"?per_page=100"),
      media : await getApi(urlMedia +"?per_page=100"),
      categories : await getApi(urlCategories),
-     author : await getApi(urlUsers +"?per_page=100")
+     author : await getApi(urlUsers +"?per_page=100"),
+     tags : await getApi(urlTags)
     }
     setSessionStorage("api-call", newObject);
     return newObject;
