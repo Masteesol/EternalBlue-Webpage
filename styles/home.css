@@ -220,6 +220,12 @@ section {
     h2 {
         font-size: 25px;
     }
+    .heading-latest {
+        font-size: 18px;
+        margin-left: 12vw;
+        margin-bottom: 0px;
+        margin-top: 7vh;
+    }
     /*due to android phones having this annoying meny at the bottom I need to offset the top post by 10vh to compensate*/
     .featured-post {
         margin-top: 10vh;
@@ -230,6 +236,7 @@ section {
     .featured-post img {
         animation: none;
     }
+
 
     h3 {
         font-size: 2.5vw!important;
