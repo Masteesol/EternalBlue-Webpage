@@ -17,7 +17,10 @@ async function insertData() {
             let JSONObj;
             if(!getSessionStorage("api-call")) {
                 //function location: session-storage.js
+                //reloading the page as soon as the object is loaded into session storage as 
+                //I ran into problems with the player when running the songs directyl from the api call
                 JSONObj = await newObject();
+                window.location.reload();
             } else {
                 newObject();
                 JSONObj = getSessionStorage("api-call");
@@ -134,7 +137,7 @@ async function createMediaPlayer(onlyAudio) {
             id : item.id
         };
     }).sort((firstItem, secondItem) => firstItem.trackNum - secondItem.trackNum);
-    
+
     console.log(audioObjects);
 
     body.insertBefore(mediaPlayerHTML(), main);
