@@ -144,8 +144,8 @@ audio::-webkit-media-controls-volume-slider-container,audio::-webkit-media-contr
     filter: invert(96%) sepia(96%) saturate(0%) hue-rotate(59deg) brightness(103%) contrast(106%);
 }
 
-::-webkit-scrollbar {
-    background-color: rgb(0, 0, 0, 0.3);
+.media-player-container-inner::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 
