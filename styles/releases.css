@@ -132,7 +132,7 @@ audio {
     z-index: 15;
     width: 100%;
     background-color: black;
-    
+
     
 }
 audio::-webkit-media-controls-panel, audio::-webkit-media-controls-timeline-container {
@@ -144,6 +144,9 @@ audio::-webkit-media-controls-volume-slider-container,audio::-webkit-media-contr
     filter: invert(96%) sepia(96%) saturate(0%) hue-rotate(59deg) brightness(103%) contrast(106%);
 }
 
+::-webkit-scrollbar {
+    background-color: rgb(0, 0, 0, 0.3);
+}
 
 
 
