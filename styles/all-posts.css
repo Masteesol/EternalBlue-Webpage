@@ -24,6 +24,7 @@ main {
 
 h1 {
     margin-bottom: 10vh;
+    font-size: 2.7vw;
 }
 
 .heading-container {
@@ -80,5 +81,8 @@ header {
     
     p {
         font-size: 2vw;
+    }
+    h1 {
+        font-size: 5vw;
     }
 }

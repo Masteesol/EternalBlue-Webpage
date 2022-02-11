@@ -40,11 +40,12 @@ function createPostHTML(post, mediaSource, author) {
     newHTML.classList.add("new-post")
     newHTML.innerHTML = `<a href="post.html?id=${post.id}" class="featured-image-container">
                            <img src="${mediaSource}"> </a>
-                        <h2>${post.title.rendered}</h2>
-                        <div class="date-author">
+                           <div class="date-author">
                                 <p>Author: ${author}</p>
                                 <p>Published: ${reformatDate(post.modified)}</p>
-                        </div>`;
+                            </div>
+                            <h2>${post.title.rendered}</h2>
+                        `;
     return newHTML;
 }
 

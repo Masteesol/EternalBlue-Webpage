@@ -89,16 +89,16 @@ section {
 .featured-post {
     width: 100%;
     min-height: 30vh;
-    max-height: 50vh;
+    max-height: 6vw;
     overflow: hidden;
     position: relative;
     cursor: pointer;
 }
 
 @keyframes up-and-down{
-    0%{bottom: 0vh;}
+    0%{bottom: -10vh;}
     50%{bottom: 10vh;}
-    100%{bottom: 0vh;}
+    100%{bottom: -10vh;}
 }
 
 .featured-post img {
@@ -106,7 +106,7 @@ section {
     height: auto;
     position: relative;
     animation-name: up-and-down;
-    animation-duration: 9s;
+    animation-duration: 11s;
    animation-iteration-count: infinite;
 }
 
@@ -236,7 +236,7 @@ section {
 
 
     h3 {
-        font-size: 2.5vw!important;
+        font-size: 2.8vw!important;
     }
 
     .front-page {
