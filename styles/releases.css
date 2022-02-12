@@ -34,8 +34,11 @@ section {
 
 .sound-icon {
     background-image: url("/icons/Icon\ open-audio-spectrum.svg");
-    width: 100px;
-    height: 100px;
+    background-repeat: no-repeat;
+    width: 6vw;
+    min-height: 50px;
+    height: 6vw;
+    min-width: 50px;
     background-size: 100%;
     background-repeat: none;
     margin-left: 5vw;
@@ -170,8 +173,9 @@ audio::-webkit-media-controls-volume-slider-container,audio::-webkit-media-contr
 
 .album-cover {
     height: auto;
-    width: 50%;
+    width: calc(10vh + 25vw);
     max-width: 500px;
+    /*min-width: 200px;*/
     
 }
 
@@ -242,5 +246,11 @@ audio::-webkit-media-controls-volume-slider-container,audio::-webkit-media-contr
     audio {
         margin-bottom: 5vh;
     }
-    
+    #open-media-player {
+        margin-bottom: 7vh;
+        font-size: 5vw!important;
+    }
+    h1 {
+        font-size: 4vw;
+    }
 }
