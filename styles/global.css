@@ -102,9 +102,9 @@ ul >* {
     top: 20px;
     right: 20px;
     width: 3vw;
-    min-width: 40px;
+    min-width: 30px;
     height: 3vw;
-    min-height: 40px;
+    min-height: 30px;
     background-size: 100%;
     background-color: transparent;
     border: none;
@@ -254,7 +254,7 @@ section, body, main {
     }
     nav a, nav li {
         display: block;
-        font-size: 30px!important;
+        font-size: 7vw!important;
         margin-bottom: 10px;
     }
     /*need to make a slide-in kind of menu for mobile viewports*/
@@ -282,6 +282,8 @@ section, body, main {
         /*andriod devices has this annoying nav menu at the bottom, 
         so I need to offset my nav by 10vh to make it look centered*/
     }
+
+   
     
     #burger-menu {
         display: inherit;

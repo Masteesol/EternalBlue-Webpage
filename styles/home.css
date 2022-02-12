@@ -224,6 +224,9 @@ section {
     .front-page p {
         font-size: 6vw;
     }
+    .front-page div {
+        margin-bottom: 7vh;
+    }
     .heading-latest {
         font-size: 18px;
         margin-left: 12vw;
