@@ -49,7 +49,7 @@ body.addEventListener("click", function(e) {
         const id = e.target.id;
         if(id.includes("post-image")) {
                 //orginally used e.originalTarget.closest("picture"), but doesn't work in chrome
-                const parentContainer = e.originalTarget.parentNode.parentNode;
+                const parentContainer = e.target.parentNode.parentNode;
                 //I want to keep the original element in the DOM, so I create  a copy instead which I scale up with css
                 const copyOfElement = document.createElement("picture");
                 copyOfElement.innerHTML = parentContainer.innerHTML;
