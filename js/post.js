@@ -47,22 +47,20 @@ async function insertData() {
 
 body.addEventListener("click", function(e) {
         const id = e.target.id;
-        const className = e.target.className;
         if(id.includes("post-image")) {
-                const parentContainer = e.originalTarget.closest("picture");
-                if(parentContainer.className && parentContainer.className === "picture-active") {
-                        parentContainer.remove();
-                } else {
+                //orginally used e.originalTarget.closest("picture"), but doesn't work in chrome
+                const parentContainer = e.originalTarget.parentNode.parentNode;
                 //I want to keep the original element in the DOM, so I create  a copy instead which I scale up with css
                 const copyOfElement = document.createElement("picture");
                 copyOfElement.innerHTML = parentContainer.innerHTML;
+                const image = copyOfElement.getElementsByTagName("img")[0];
+                image.removeAttribute("id");
                 copyOfElement.classList.add("picture-active");
+                copyOfElement.addEventListener("click", function() {
+                        this.remove()
+                })
                 body.append(copyOfElement);
-                }
-        } if(e.originalTarget.closest("picture") && e.originalTarget.closest("picture").className === "picture-active") {
-                e.originalTarget.closest("picture").remove(); 
-        }
-
+        } 
 })
 
 function createFeaturedImage(source) {
