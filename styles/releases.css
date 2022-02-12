@@ -8,6 +8,10 @@ header {
     transform: none;
 }
 
+#nav-home:hover {
+    transform: scale(1.7, 1.7);
+}
+
 #nav-releases {
     transform: scale(1.7, 1.7);
 }

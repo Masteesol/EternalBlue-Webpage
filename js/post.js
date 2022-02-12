@@ -58,6 +58,7 @@ function getCleanHTML(content) {
         const htmlNodes = stringToHTMLNodes(content);
         console.log(htmlNodes);
         let nodeList = [];
+        let counter = 1;
         htmlNodes.childNodes.forEach(function(node) {
                 console.log(node);
                 if(node.nodeName === "P") {
@@ -66,13 +67,18 @@ function getCleanHTML(content) {
                 if(node.nodeName === "FIGURE") {
                         if(node.className.includes("wp-block-image")){
                                 const div = document.createElement("picture");
+                                div.setAttribute("id", "media-"+counter);
                                 const newHTML = document.createElement("figure");
+                                newHTML.addEventListener("click", function() {
+                                        console.log("test");
+                                })
                                 const caption = document.createElement("figcaption");
                                 newHTML.innerHTML = `<img src="${node.firstChild.src}" alt="${node.firstChild.alt}">`;
                                 newHTML.classList.add("wp-image");
                                 caption.innerHTML = `${node.textContent}`;
                                 div.append(newHTML, caption)
                                 nodeList.push(div)
+                                counter++;
                         }
                         if(node.className.includes("wp-block-audio")){
                                 const div = document.createElement("div");
@@ -88,8 +94,10 @@ function getCleanHTML(content) {
                                 div.innerHTML= audio;
                                 div.append(caption)
                                 nodeList.push(div)
+                                counter++;
                         }
                 }
+                
         });
         console.log("nodelist", nodeList);
         return nodeList;
