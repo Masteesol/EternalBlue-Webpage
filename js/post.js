@@ -45,6 +45,25 @@ async function insertData() {
         
 }       
 
+body.addEventListener("click", function(e) {
+        const id = e.target.id;
+        const className = e.target.className;
+        if(id.includes("post-image")) {
+                const parentContainer = e.originalTarget.closest("picture");
+                if(parentContainer.className && parentContainer.className === "picture-active") {
+                        parentContainer.remove();
+                } else {
+                //I want to keep the original element in the DOM, so I create  a copy instead which I scale up with css
+                const copyOfElement = document.createElement("picture");
+                copyOfElement.innerHTML = parentContainer.innerHTML;
+                copyOfElement.classList.add("picture-active");
+                body.append(copyOfElement);
+                }
+        } if(e.originalTarget.closest("picture") && e.originalTarget.closest("picture").className === "picture-active") {
+                e.originalTarget.closest("picture").remove(); 
+        }
+
+})
 
 function createFeaturedImage(source) {
         const htmlImage = document.createElement("img");
@@ -67,13 +86,9 @@ function getCleanHTML(content) {
                 if(node.nodeName === "FIGURE") {
                         if(node.className.includes("wp-block-image")){
                                 const div = document.createElement("picture");
-                                div.setAttribute("id", "media-"+counter);
                                 const newHTML = document.createElement("figure");
-                                newHTML.addEventListener("click", function() {
-                                        console.log("test");
-                                })
                                 const caption = document.createElement("figcaption");
-                                newHTML.innerHTML = `<img src="${node.firstChild.src}" alt="${node.firstChild.alt}">`;
+                                newHTML.innerHTML = `<img src="${node.firstChild.src}" alt="${node.firstChild.alt}" id="post-image-${counter}">`;
                                 newHTML.classList.add("wp-image");
                                 caption.innerHTML = `${node.textContent}`;
                                 div.append(newHTML, caption)
