@@ -83,7 +83,7 @@ async function insertImages (){
                                 <h2>${post.title.rendered}</h2></a>`;
         parent.insertBefore(container, parent.firstChild);
     }
-    
+    document.querySelector('.loader').remove();
     let counter = 0;
     let totalCount = 0;
     let newImageGroup;

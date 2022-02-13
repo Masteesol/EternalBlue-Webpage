@@ -2,7 +2,7 @@ const firstAlbum = document.querySelector('#album-vanagloria');
 const main = document.querySelector('main');
 const albumContainer = document.querySelector('#albums');
 const openPlayer = document.querySelector('#open-media-player');
-
+const loader = document.querySelector('.loader');
 
 let songList = {};
 
@@ -48,7 +48,8 @@ async function insertData() {
                     albumContainer.append(createAlbumHTML(post, mediaSource))
                 }
             })
-
+            openPlayer.removeAttribute("style");
+            loader.remove();
     } catch(err) {
             console.log(err);
     }

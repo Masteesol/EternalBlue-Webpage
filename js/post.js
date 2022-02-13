@@ -47,6 +47,7 @@ async function insertData() {
 
 body.addEventListener("click", function(e) {
         const id = e.target.id;
+        //code for resizing images on click in post.html
         if(id.includes("post-image")) {
                 //orginally used e.originalTarget.closest("picture"), but doesn't work in chrome
                 const parentContainer = e.target.parentNode.parentNode;

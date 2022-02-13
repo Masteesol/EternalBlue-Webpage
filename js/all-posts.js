@@ -16,9 +16,7 @@ async function insertData() {
             const author = JSONObj.author;
             const media = JSONObj.media;
             const categories = JSONObj.categories;
-            console.log(JSONObj);
             const sortedPosts = sortPostsByDate(post)
-            console.log("sorted",sortedPosts);
             post.forEach(function(post) {
                 console.log("current post", post);
                 if(post.categories[0] === sortTypeOfPost(categories, "post")) {
@@ -27,7 +25,7 @@ async function insertData() {
                     postContainer.append(createPostHTML(post, mediaSource, authorName))
                 }
             })
-
+            document.querySelector('.loader').remove();
     } catch(err) {
             console.log(err);
     }
@@ -35,7 +33,6 @@ async function insertData() {
 }       
 
 function createPostHTML(post, mediaSource, author) {
-    console.log(mediaSource);
     const newHTML = document.createElement("div");
     newHTML.classList.add("new-post")
     newHTML.innerHTML = `<a href="post.html?id=${post.id}" class="featured-image-container">
