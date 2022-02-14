@@ -15,14 +15,13 @@ async function insertData() {
             const author = JSONObj.author;
             const media = JSONObj.media;
             const categories = JSONObj.categories;
-            const sortedPosts = sortPostsByDate(posts)
-            let count = 0;
-            
+            //const sortedPosts = sortPostsByDate(posts)
+            const onlyPosts = posts.filter(post => post.categories[0] === sortTypeOfPost(categories, "post"));
             function getMorePosts (fromIndex, toIndex) {
                 let eigthPosts = [];
-                for(let i = 0; i < posts.length; i++){
+                for(let i = 0; i < onlyPosts.length; i++){
                     if(i >= fromIndex && i < toIndex) {
-                        const post = posts[i];
+                        const post = onlyPosts[i];
                         const mediaSource = media.filter(item => item.id === post.featured_media)[0].source_url;
                         const authorName = author.filter(item => item.id === post.author)[0].name;
                         eigthPosts.push(createPostHTML(post, mediaSource, authorName));
