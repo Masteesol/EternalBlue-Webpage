@@ -1,5 +1,4 @@
 const postContainer = document.querySelector('.post-content');
-
 insertData()
 
 async function insertData() {
@@ -12,25 +11,54 @@ async function insertData() {
                 newObject();
                 JSONObj = getSessionStorage("api-call");
             }
-            const post = JSONObj.posts;
+            const posts = JSONObj.posts;
             const author = JSONObj.author;
             const media = JSONObj.media;
             const categories = JSONObj.categories;
-            const sortedPosts = sortPostsByDate(post)
-            post.forEach(function(post) {
-                console.log("current post", post);
-                if(post.categories[0] === sortTypeOfPost(categories, "post")) {
-                    const mediaSource = media.filter(item => item.id === post.featured_media)[0].source_url;
-                    const authorName = author.filter(item => item.id === post.author)[0].name;
-                    postContainer.append(createPostHTML(post, mediaSource, authorName))
+            const sortedPosts = sortPostsByDate(posts)
+            let count = 0;
+            
+            function getMorePosts (fromIndex, toIndex) {
+                let eigthPosts = [];
+                for(let i = 0; i < posts.length; i++){
+                    if(i >= fromIndex && i < toIndex) {
+                        const post = posts[i];
+                        const mediaSource = media.filter(item => item.id === post.featured_media)[0].source_url;
+                        const authorName = author.filter(item => item.id === post.author)[0].name;
+                        eigthPosts.push(createPostHTML(post, mediaSource, authorName));
+                    }
                 }
-            })
+                return eigthPosts;
+            }
+
+            let startIndex = 0;
+            let endIndex = 8;
+            addPosts()
+
+            function addPosts() {
+                getMorePosts(startIndex, endIndex).forEach(function(post) {
+                    postContainer.append(post)
+                })
+                if(endIndex < posts.length) {
+                    const viewMore = document.createElement("button");
+                    viewMore.innerHTML = `View More`;
+                    viewMore.classList.add("view-more");
+                    viewMore.addEventListener("click", function() {
+                        addPosts()
+                        this.remove()
+                    })
+                postContainer.append(viewMore)
+                startIndex = startIndex + 8;
+                endIndex = endIndex + 8;
+                }
+                
+            }
+            
             document.querySelector('.loader').remove();
     } catch(err) {
             console.log(err);
     }
-    
-}       
+}
 
 function createPostHTML(post, mediaSource, author) {
     const newHTML = document.createElement("div");
@@ -60,5 +88,5 @@ function reformatDate(date) {
 }
 
 function sortPostsByDate (post) {
-    return post.sort(post.date)
+    return post.sort(post.date);
 }
