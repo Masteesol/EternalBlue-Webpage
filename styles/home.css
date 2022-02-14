@@ -216,6 +216,7 @@ section {
 }
 
 
+
 @media only screen and (max-width: 800px) {
     h2 {
         font-size: 25px;
@@ -276,5 +277,14 @@ section {
         background-color: transparent;
         background-image: linear-gradient(transparent, black);
         position: absolute;
+    }
+    #link-to-all a{
+        height: 90%;
+        width: 90%;
+        
+    }
+    #link-to-all a h3 {
+        padding-top: 55%;
+        font-size: 10vw;
     }
 }

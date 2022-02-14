@@ -78,6 +78,11 @@ header {
     border: 1px solid white;
     cursor: pointer;
     margin-bottom: 12vh;
+    transition: background-color;
+    transition-duration: 0.3s;
+}
+.view-more:hover {
+    background-color: rgba(0, 0, 0, 0.418);
 }
 
 @media only screen and (max-width: 700px) {

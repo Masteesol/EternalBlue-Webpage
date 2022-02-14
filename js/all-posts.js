@@ -16,7 +16,9 @@ async function insertData() {
             const media = JSONObj.media;
             const categories = JSONObj.categories;
             //const sortedPosts = sortPostsByDate(posts)
+
             const onlyPosts = posts.filter(post => post.categories[0] === sortTypeOfPost(categories, "post"));
+            //creating 8 posts HTML cards at a time when called
             function getMorePosts (fromIndex, toIndex) {
                 let eigthPosts = [];
                 for(let i = 0; i < onlyPosts.length; i++){
@@ -32,6 +34,7 @@ async function insertData() {
 
             let startIndex = 0;
             let endIndex = 8;
+            
             addPosts()
 
             function addPosts() {
@@ -43,10 +46,10 @@ async function insertData() {
                     viewMore.innerHTML = `View More`;
                     viewMore.classList.add("view-more");
                     viewMore.addEventListener("click", function() {
-                        addPosts()
-                        this.remove()
+                        addPosts();
+                        this.remove();
                     })
-                postContainer.append(viewMore)
+                postContainer.append(viewMore);
                 startIndex = startIndex + 8;
                 endIndex = endIndex + 8;
                 }

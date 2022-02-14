@@ -95,7 +95,7 @@ async function insertImages (){
     let postsLength = posts.length;
     
     posts.forEach(function(post) {
-        if(post.categories[0] === sortTypeOfPost(categories, "post")) {
+        if(post.categories[0] === sortTypeOfPost(categories, "post") && totalCount <=8) {
             //function location: sorting.js
             if(counter === 0) {
                 createImageGroup()
@@ -119,7 +119,6 @@ async function insertImages (){
         } else {
             postsLength--;
         }
-
         function createImageGroup() {
             newImageGroup = document.createElement("picture");
             newImageGroup.classList.add("image-group");
@@ -141,4 +140,17 @@ async function insertImages (){
         }
         
     })
+    lastPost()
+    function lastPost() {
+        newImageGroup = document.createElement("picture");
+        newImageGroup.classList.add("image-group");
+        newImageGroup.setAttribute("id", "link-to-all");
+        const newHTML = document.createElement("a");
+        newHTML.classList.add("image-container");
+        newHTML.setAttribute("href", "all-posts.html");
+        newHTML.innerHTML = `<h3>Click to see all posts</h3>`;
+        newImageGroup.append(newHTML);
+        imageReel.append(newImageGroup);
+    }
+    
 }
