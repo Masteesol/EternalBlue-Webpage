@@ -61,9 +61,16 @@ textarea {
     resize: none;
 }
 
+
+
+
 @media only screen and (max-width: 800px) {
     main {
         width: 95%;
+    }
+
+    footer div {
+        z-index: -1;
     }
 }
 
