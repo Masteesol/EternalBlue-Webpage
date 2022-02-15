@@ -244,7 +244,11 @@ section {
 
 
     h3 {
-        font-size: 2.8vw;
+        font-size: 2.8vw!important;
+    }
+
+    #link-to-all h3 {
+        font-size: 4vw!important;
     }
 
     .front-page {
