@@ -96,10 +96,11 @@ async function insertData() {
                             if(el.id === "search-field-phrase") {
                                 if(inputPhrase.value.trim() !== "") {
                                     const htmlOfResults = htmlResultArticle(inputPhrase.value);
+                                    body.append(htmlOfResults);
                                 } else {
                                     alert("Empty search field")
                                 }
-                                body.append(htmlOfResults);
+                                
                             }
                         })
                         div.append(el, searchButton);
