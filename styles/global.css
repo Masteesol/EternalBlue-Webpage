@@ -155,7 +155,7 @@ ul >* {
 
 /*white filter*/
 
-.exit-button, #burger-menu, #back-to-posts span {
+.exit-button, #burger-menu, #back-to-posts span, .search-field-container span div {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(101%) contrast(103%);
 }
 

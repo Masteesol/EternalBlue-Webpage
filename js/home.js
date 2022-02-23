@@ -37,16 +37,8 @@ async function insertImages (){
         newObject();
         JSONObj = getSessionStorage("api-call");
     }
-    
-    const tags = JSONObj.tags;
-    const posts = JSONObj.posts;
-    const media = JSONObj.media;
-    const categories = JSONObj.categories;
 
-    console.log("categories: ", categories);
-    console.log("posts: ", posts);
-    console.log("images: ", media);
-    console.log("tags: ", tags);
+    const {posts, tags, media, categories} = JSONObj;
 
     function findFeaturedPost() {
         //finding id of featured post tag
