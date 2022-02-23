@@ -27,12 +27,12 @@ input[type=radio]{
 
 input[type=radio] + label {
     padding: 0.5em;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     cursor: pointer;
 }
 
 input[type=radio]:checked + label {
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 5px;
     padding: 0.5em;
 }
@@ -139,7 +139,6 @@ label {
     border: 0px;
     position: absolute;
     right: 0px;
-    filter: invert(71%) sepia(0%) saturate(1533%) hue-rotate(153deg) brightness(97%) contrast(79%);
 }
 
 #search-field-phrase-button {
