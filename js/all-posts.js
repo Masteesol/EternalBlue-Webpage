@@ -72,13 +72,16 @@ async function insertData() {
                             container.append(listContainer);
                         } else if ( text === "") {
                             listContainer.innerHTML = "";
+                            listContainer.remove()
                         }
                         function htmlResult(results) { 
-                            const newList = document.createElement("ul");
+                            const newList = document.createElement("ol");
                             results.forEach(function(result) {
-                               const listElement = document.createElement("a");
+                               /*const listElement = document.createElement("a");
                                listElement.setAttribute("href", `post.html?id=${result.id}`);
-                               listElement.innerHTML = `<li>${result.title.rendered}</li>`;
+                               listElement.innerHTML = `<li>${result.title.rendered}</li>`;*/
+                               const listElement = document.createElement("li");
+                               listElement.innerHTML = `<a href=post.html?id=${result.id}>${result.title.rendered}</a>`
                                newList.append(listElement);
                             });
                             return newList;
@@ -98,7 +101,7 @@ async function insertData() {
                                     const htmlOfResults = htmlResultArticle(inputPhrase.value);
                                     body.append(htmlOfResults);
                                 } else {
-                                    alert("Empty search field")
+                                    alert("Empty search field");
                                 }
                                 
                             }
