@@ -171,10 +171,11 @@ label {
     padding-top: 2em;
     padding-bottom: 2em;
     z-index: 1;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .search-results a, .search-results li::marker {
-    color:rgba(0, 88, 84, 0.788);
+    color:rgb(0, 56, 53);
 }
 
 
