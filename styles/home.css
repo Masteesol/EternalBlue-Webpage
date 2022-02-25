@@ -40,7 +40,7 @@ section {
     overflow: hidden;
 }
 
-.front-page p {
+.front-page h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
     font-weight: 100;
@@ -49,7 +49,7 @@ section {
 }
 
 
-.front-page p{
+.front-page h1{
     animation-duration: 2s, 2s;
     animation-delay: 0s, 4s;
     animation-name: up-below, fade-out;
@@ -222,7 +222,7 @@ section {
         font-size: 25px;
     }
 
-    .front-page p {
+    .front-page h1 {
         font-size: 6vw;
     }
     .front-page div {

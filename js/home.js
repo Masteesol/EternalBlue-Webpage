@@ -9,8 +9,8 @@ let toggled = false;
 setInterval(welcomeText, 6000)
 
 function welcomeText() {
-    const welcomeSign = document.createElement("p")
-    document.querySelector('.front-page p').remove()
+    const welcomeSign = document.createElement("h1")
+    document.querySelector('.front-page h1').remove()
     if(toggled) {
         welcomeSign.innerHTML = "Welcome, Human.";
         welcomeCont.append(welcomeSign)
