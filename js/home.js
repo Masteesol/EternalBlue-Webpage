@@ -69,8 +69,9 @@ async function insertImages (){
         const parent = document.querySelector('.container');
         const container = document.createElement("div");
         container.classList.add("featured-post");
-        const imageSource = media.filter(item => item.id === post.featured_media)[0].source_url;
-        container.innerHTML = `<a href="post.html?id=${post.id}"><img src="${imageSource}">
+        const featuredImage = media.filter(item => item.id === post.featured_media)[0];
+        console.log(featuredImage);
+        container.innerHTML = `<a href="post.html?id=${post.id}"><img src="${featuredImage.source_url}" alt="${featuredImage.alt_text}">
                                 <span><div></div><h3>Featured Post</h3></span>
                                 <h2>${post.title.rendered}</h2></a>`;
         parent.insertBefore(container, parent.firstChild);
@@ -125,7 +126,7 @@ async function insertImages (){
             const headerImage = media.filter(media => media.id === post.featured_media)[0];
         
             newHTML.setAttribute("id", post.id);
-            newHTML.innerHTML = `<img src="${headerImage.source_url}">
+            newHTML.innerHTML = `<img src="${headerImage.source_url}" alt="${headerImage.alt_text}">
                                     <h3>${post.title.rendered}</h3>`;
             console.log(newHTML);
             return newHTML;

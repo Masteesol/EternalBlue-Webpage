@@ -19,9 +19,9 @@ async function insertData() {
                 const post = await getApi(urlPosts + String(id));
                 const author = await getApi(urlUsers + post.author);
                 const media = await getApi(urlMedia + post.featured_media);
-                console.log(post);
+
                 //Setting heading image
-                featuredImageContainer.append(createFeaturedImage(media.source_url));
+                featuredImageContainer.append(createFeaturedImage(media));
                 //Setting the title
                 h1.innerHTML = post.title.rendered;
                 title.innerHTML = post.title.rendered;
@@ -64,9 +64,10 @@ body.addEventListener("click", function(e) {
         } 
 })
 
-function createFeaturedImage(source) {
+function createFeaturedImage(media) {
         const htmlImage = document.createElement("img");
-        htmlImage.setAttribute("src", source);
+        htmlImage.setAttribute("src", media.source_url);
+        htmlImage.setAttribute("alt", media.alt_text);
         htmlImage.classList.add("featured-image");
         return htmlImage;
 }

@@ -226,9 +226,9 @@ async function insertData() {
                 for(let i = 0; i < array.length; i++){
                     if(i >= fromIndex && i < toIndex) {
                         const post = array[i];
-                        const mediaSource = media.filter(item => item.id === post.featured_media)[0].source_url;
+                        const currentMedia = media.filter(item => item.id === post.featured_media)[0];
                         const authorName = author.filter(item => item.id === post.author)[0].name;
-                        eigthPosts.push(createPostHTML(post, mediaSource, authorName));
+                        eigthPosts.push(createPostHTML(post, currentMedia, authorName));
                     }
                 }
                 return eigthPosts;
@@ -289,11 +289,11 @@ async function insertData() {
 }
 
 
-function createPostHTML(post, mediaSource, author) {
+function createPostHTML(post, media, author) {
     const newHTML = document.createElement("div");
     newHTML.classList.add("new-post")
     newHTML.innerHTML = `<a href="post.html?id=${post.id}" class="featured-image-container">
-                           <img src="${mediaSource}"> </a>
+                           <img src="${media.source_url}" alt="${media.alt_text}"></a>
                            <div class="date-author">
                                 <p>Author: ${author}</p>
                                 <p>Published: ${reformatDate(post.modified)}</p>

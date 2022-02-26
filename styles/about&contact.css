@@ -45,7 +45,7 @@ button {
     outline: none;
     cursor: pointer;
     color: white;
-    background-color: rgb(226, 0, 0);
+    background-color: rgba(0, 60, 190, 0.384);
     border: 0px;
     border-radius: 5px;
     font-size: 30px;
@@ -54,7 +54,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(218, 89, 89);
+    background-color: rgba(91, 120, 182, 0.384);
 }
 
 textarea {
