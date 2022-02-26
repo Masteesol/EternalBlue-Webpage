@@ -198,6 +198,10 @@ ul >* {
 
 }
 
+.footer p:last-of-type {
+    margin-bottom: 10vh;
+}
+
 .footer div {
     width: 80%;
     height: 80%;
@@ -350,8 +354,6 @@ section, body, main {
         justify-content: center;
         align-items: center;
         margin-bottom: 10vh;
-        /*andriod devices has this annoying nav menu at the bottom, 
-        so I need to offset my nav by 10vh to make it look centered*/
     }
 
    
@@ -365,5 +367,8 @@ section, body, main {
     }
     .button-nav {
         display: none;
+    }
+    .footer p:last-of-type {
+        margin-bottom: inherit;
     }
 }
